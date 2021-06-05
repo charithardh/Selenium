@@ -6,7 +6,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 
 public class ExtentManager extends BaseTest {
      
-	public static ExtentReports report;
+	//public static ExtentReports report;
 	
 	public static ExtentReports getInstance() {
 		
