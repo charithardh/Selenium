@@ -1,8 +1,0 @@
-2021-06-06 01:30:40 INFO  Test01:13 - Loading the properties file.....!
-2021-06-06 01:30:42 INFO  Test01:15 - Launching the browser:chrome
-2021-06-06 01:30:43 INFO  Test01:17 - Deleting the browser cookies
-2021-06-06 01:30:45 INFO  Test01:19 - Navigating to the URL:https://www.amazon.in/
-2021-06-06 01:30:45 INFO  Test01:34 - Selecting the Dropdown using locator:searchDropdownBox
-2021-06-06 01:30:45 INFO  Test01:36 - Entering the text using locator:field-keywords
-2021-06-06 01:30:48 INFO  Test01:38 - Clicking on search button using locator://input[@id='nav-search-submit-button']
-2021-06-06 01:31:09 INFO  Test01:40 - Closing the browser
