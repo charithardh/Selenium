@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="PrallelExecutionSuit" parallel="tests">
+  <test thread-count="5" name="chromeExecution">
+  <parameter name="Browser" value="chrome"></parameter>
+    <classes>
+      <class name="SampleMavenProject.SeleniumMavenProject.TNG_002"/>
+      <class name="SampleMavenProject.SeleniumMavenProject.TNG_001"/>
+    </classes>
+  </test> <!-- ParallelExecutionTest -->
+  
+  <test thread-count="5" name="firefoxExecution">
+  <parameter name="Browser" value="firefox"></parameter>
+    <classes>
+      <class name="SampleMavenProject.SeleniumMavenProject.TNG_002"/>
+      <class name="SampleMavenProject.SeleniumMavenProject.TNG_001"/>
+    </classes>
+  </test> <!-- ParallelExecutionTest -->
+</suite> <!-- PrallelExecutionSuit -->
