@@ -5,7 +5,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -18,6 +20,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.ProfilesIni;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 
 import com.relevantcodes.extentreports.ExtentReports;
@@ -35,6 +38,12 @@ public class BaseTest {
 	public static Properties orElemen;
 	public static ExtentReports report;
 	public static ExtentTest test;
+	public static String fileName;
+	
+	static {
+		Date dt=new Date();
+		fileName=dt.toString().replace(":", "_").replace(" ", "_");
+	}
 	
 	public static void init() throws Exception
 	{
@@ -75,6 +84,7 @@ public class BaseTest {
 			chromeoption.addArguments("user-data-dir=C:\\Users\\kchar\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 2");
 			chromeoption.addArguments("--disable-notifications");
 			driver = new ChromeDriver(chromeoption);
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		}
 		else if(browser.equals("firefox"))
 		{
@@ -206,6 +216,52 @@ public class BaseTest {
 		else
 			return false;
 	}
-
+	
+	
+    //---------------------------Shopping Methods--------------------------------------------
+	
+	public static void moveToElemant(String locator) {
+		
+		Actions action=new Actions(driver);
+		action.moveToElement(webLocator(locator)).perform();
+	}
+	
+	public static String getElementText(String locator) {
+		String value=webLocator(locator).getText().replace("$", "");
+		return value;
+	}
+	
+	public static String getFieldValue(String locator, String attribute) {
+		String value=webLocator(locator).getAttribute(attribute);
+		return value;
+	}
+	
+	public static void resultInfo(Logger log, String infoMessage) {
+		log.info(infoMessage);
+		test.log(LogStatus.INFO, infoMessage);
+	}
+	
+	public static void resultPass(Logger log, String passMessage) {
+		log.info(passMessage);
+		test.log(LogStatus.PASS, passMessage);
+	}
+	
+	public static void validation(Logger log, String FirstValue, String SecondValue, String SucessMessage, String FailedMessage) throws Exception {
+		if(FirstValue.equals(SecondValue)) {
+			log.info(SucessMessage);
+			VerificationPassed(SucessMessage);
+		}else {
+			log.info(FailedMessage);
+			VerificationFailed(FailedMessage);
+		}
+	}
+	
+	public static void takeScreenshort() throws Exception {
+		Date dt=new Date();
+		String dateFormat=dt.toString().replace(":", "_").replace(" ", "_")+".png";
+		File scrensht = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileHandler.copy(scrensht, new File(projectPath+"//failurescreenshots//"+dateFormat));
+		test.log(LogStatus.INFO, "Screenshot-->"+test.addScreenCapture(projectPath+"//failurescreenshots//"+dateFormat));
+	}
 	
 }

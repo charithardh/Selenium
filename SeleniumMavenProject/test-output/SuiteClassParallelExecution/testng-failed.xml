@@ -4,13 +4,13 @@
   <test thread-count="5" parallel="classes" name="TestClassParallelExecution(failed)">
     <parameter name="Browser" value="chrome"/>
     <classes>
-      <class name="SampleMavenProject.SeleniumMavenProject.TNG_001">
+      <class name="SampleMavenProject.SeleniumMavenProject.TNG_002">
         <methods>
+          <include name="amazonlog4j"/>
           <include name="afterMethod"/>
-          <include name="amazon"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- SampleMavenProject.SeleniumMavenProject.TNG_001 -->
+      </class> <!-- SampleMavenProject.SeleniumMavenProject.TNG_002 -->
     </classes>
   </test> <!-- TestClassParallelExecution(failed) -->
 </suite> <!-- Failed suite [SuiteClassParallelExecution] -->
