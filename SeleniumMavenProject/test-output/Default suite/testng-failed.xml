@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SampleMavenProject.SeleniumMavenProject.TNG_001">
+      <class name="excelDataDriven.DataManagmentWithDataProvider">
         <methods>
-          <include name="afterMethod"/>
-          <include name="amazon"/>
-          <include name="beforeMethod"/>
+          <include name="f"/>
         </methods>
-      </class> <!-- SampleMavenProject.SeleniumMavenProject.TNG_001 -->
+      </class> <!-- excelDataDriven.DataManagmentWithDataProvider -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

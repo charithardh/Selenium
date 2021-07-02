@@ -1,32 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-06-20T05:51:56Z" name="Suite" finished-at="2021-06-20T05:52:33Z" duration-ms="36375">
+  <suite started-at="2021-07-02T13:47:31Z" name="Default suite" finished-at="2021-07-02T13:47:32Z" duration-ms="899">
     <groups>
     </groups>
-    <test started-at="2021-06-20T05:51:56Z" name="Test" finished-at="2021-06-20T05:52:33Z" duration-ms="36375">
-      <class name="SampleMavenProject.SeleniumMavenProject.TNG_002">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:SampleMavenProject.SeleniumMavenProject.TNG_002@14bee915]" started-at="2021-06-20T05:51:56Z" name="beforeMethod" finished-at="2021-06-20T05:52:24Z" duration-ms="28068" status="PASS">
+    <test started-at="2021-07-02T13:47:31Z" name="Default test" finished-at="2021-07-02T13:47:32Z" duration-ms="899">
+      <class name="excelDataDriven.DataManagmentWithDataProvider">
+        <test-method signature="f(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:excelDataDriven.DataManagmentWithDataProvider@398dada8]" started-at="2021-07-02T13:47:32Z" name="f" data-provider="getData" finished-at="2021-07-02T13:47:32Z" duration-ms="15" status="PASS">
           <params>
             <param index="0">
               <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
                 <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ravilella.2015@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[zoho2015]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[loginSuccess]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="amazonlog4j()[pri:0, instance:SampleMavenProject.SeleniumMavenProject.TNG_002@14bee915]" started-at="2021-06-20T05:52:24Z" name="amazonlog4j" finished-at="2021-06-20T05:52:30Z" duration-ms="5913" status="PASS">
+        </test-method> <!-- f -->
+        <test-method signature="f(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:excelDataDriven.DataManagmentWithDataProvider@398dada8]" started-at="2021-07-02T13:47:32Z" name="f" data-provider="getData" finished-at="2021-07-02T13:47:32Z" duration-ms="13" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[U1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[P1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[loginSuccess]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- amazonlog4j -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:SampleMavenProject.SeleniumMavenProject.TNG_002@14bee915]" started-at="2021-06-20T05:52:30Z" name="afterMethod" finished-at="2021-06-20T05:52:33Z" duration-ms="2361" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- SampleMavenProject.SeleniumMavenProject.TNG_002 -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- f -->
+      </class> <!-- excelDataDriven.DataManagmentWithDataProvider -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
