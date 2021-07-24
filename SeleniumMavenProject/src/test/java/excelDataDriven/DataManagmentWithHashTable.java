@@ -3,19 +3,20 @@ package excelDataDriven;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.Hashtable;
 
 import org.testng.annotations.DataProvider;
 
 public class DataManagmentWithHashTable {
-  @Test(dataProvider = "dp")
-  public void f(Integer n, String s) {
+  @Test(dataProvider = "getData")
+  public void f(Hashtable<String, String> dt) {
   }
 
   @DataProvider
   public Object[][] getData() throws Exception {
 	  ExcelAPI e=new ExcelAPI("E:\\DummyExcels\\suitea.xlsx");
 		String sheetName="Data";
-		String testCaseName="LoginTest";
+		String testCaseName="TestB";
 		
 		System.out.println("TestName is: "+testCaseName);
 		
@@ -47,19 +48,21 @@ public class DataManagmentWithHashTable {
 		
 		System.out.println("Total col are: "+col);
 		
-		Object[][] data=new Object[row][col];
-		
+		Object[][] data=new Object[row][1];
+		Hashtable<String, String> table=null;
 		int dataRow=0;
 		for(int rnum = dataStartRowNumber; rnum < dataStartRowNumber+row; rnum++) {
-			
+			table=new Hashtable<String, String>();
 			for(int cnum=0; cnum < col;cnum++) {
 				
 			    //System.out.print(e.getCellData(sheetName, rnum, cnum)+ " ");
 				//data[dataRow][cnum]=e.getCellData(sheetName, rnum, cnum);
-				//key=e.getCellData(sheetName, 0, cnum);
-				
+				String key = e.getCellData(sheetName, columnStartRowNumber, cnum);
+				String value=e.getCellData(sheetName, rnum, cnum);
+				table.put(key, value);
 			}
 			System.out.println();
+			data[dataRow][0]=table;
 			dataRow++;
 		}
 		return data;

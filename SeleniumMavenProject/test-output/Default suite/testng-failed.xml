@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="excelDataDriven.DataManagmentWithDataProvider">
+      <class name="excelDataDriven.DataManagmentWithHashTable">
         <methods>
           <include name="f"/>
         </methods>
-      </class> <!-- excelDataDriven.DataManagmentWithDataProvider -->
+      </class> <!-- excelDataDriven.DataManagmentWithHashTable -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
